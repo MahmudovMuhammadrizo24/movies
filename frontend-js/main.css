@@ -31,12 +31,7 @@ nav {
     font-weight: 500;
 }
 
-.container {
-    width: 100%;
-    height: calc(100vh - 45px);
 
-
-}
 
 .bigBox {
     width: 100%;
@@ -52,25 +47,14 @@ nav {
     position: relative;
 }
 
+.navbar {
+    width: 100%;
+    height: 80px;
+}
+
 .serch_option {
     width: 720px;
     height: 410px;
     position: absolute;
     left: 300px;
-}
-
-
-.col {
-    /* Stilizatsiya atributlari */
-}
-
-.table {
-    /* Stilizatsiya atributlari */
-}
-
-/* Boshqa stilizatsiya qoidalari */
-
-/* ... */
-.film {
-    padding-top: 100px;
 }
