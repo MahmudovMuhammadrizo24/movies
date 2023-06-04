@@ -42,9 +42,15 @@ nav {
     top: 100px;
 }
 
+.col-3 {}
+
 .list-group-item {
-    width: 200px;
+    width: 250px;
+    height: 45px;
     position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
 }
 
 .navbar {
