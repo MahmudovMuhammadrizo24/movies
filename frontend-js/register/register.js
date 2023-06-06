@@ -1,45 +1,36 @@
 "use strict";
-const loginForm = document.getElementById('RegisterForm');
-const loginBtn = document.getElementById('loginBtn');
 
+const RegisterForm = document.getElementById('RegisterForm');
+const RegisterBtn = document.getElementById('RegisterBtn');
 
-loginBtn.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevents the default click behavior
+RegisterBtn.addEventListener('click', async (event) => {
+    event.preventDefault();
 
-    // Retrieve the values
     const username = document.getElementById('exampleInputEmail1').value;
     const password = document.getElementById('exampleInputPassword1').value;
     const name = document.getElementById('exampleInputName').value;
 
-    // Create an object with the input values
-    let loginData = {
-        username: username,
-        password: password,
-        name: name
-    };
+    try {
+        const response = await axios.post('https://pdp-movies-78.onrender.com/api/users', {
+            name,
+            username,
+            password,
+        });
+        console.log(response.data);
+        alert(`Ro'yxatdan o'tdingiz, Rahmat😉`);
+        window.location.href = '../index.html';
 
-    // Output the object to the console
-    console.log(loginData);
-    window.location.href = '../index.html';
+    }
+    catch (error) {
+        console.error(error);
+        if (error.response) {
+            alert(`Serverda xatolik yuz berdi: ${error.response.data}`);
+        }
+        else {
+            alert(`Ma'lumotlar serverga jo'natilmadi!❌`);
+        }
+    }
 });
-fetch('/register', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(formData)
-})
-    .then(response => response.json())
-    .then(data => {
-        // Process the response from the backend
-        console.log(data); // You can do further actions based on the response
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-
-
-
 
 
 
